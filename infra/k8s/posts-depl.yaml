@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: posts-depl
+spec:
+  replicas: 1
+  selector:
+      matchLabels:
+          app: posts
+  template:
+      metadata:
+          labels:
+            app: posts
+      spec:
+          containers:
+              - name: posts
+                image: layonez/posts
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-clusterip-srv
+spec:
+  type: ClusterIP # default type
+  selector:
+    app: posts # find all labeled pods 
+  ports:
+  - name: posts
+    protocol: TCP
+    targetPort: 4000
+    port: 4000
