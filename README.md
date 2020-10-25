@@ -6,6 +6,7 @@ First half of https://www.udemy.com/course/microservices-with-node-js-and-react/
 * skaffold
 * docker
 * kubernates
+* add local routing rule 127.0.0.1 -> ports.com for ingress service to correctly detect traffic to app
 ##### Links:
 * https://kubernetes.github.io/ingress-nginx/kubectl-plugin/
 * https://skaffold.dev/docs/install/
